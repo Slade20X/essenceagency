@@ -148,7 +148,7 @@
     .cta-card{ padding:38px; border-radius:22px; border:1px solid var(--border); background:linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.02)); box-shadow: var(--shadow); }
 
     /* ---------- Footer ---------- */
-    footer{ padding:60px 0; border-top:1px solid var(--border); color:var(--muted); }
+    footer{ padding:100px 0; margin-top:150px; border-top:1px solid var(--border); color:var(--muted); }
 
     /* ---------- Scroll-Reveal base (CSS fallback) ---------- */
     .will-animate{ opacity:0; transform: translateY(24px) scale(.98); filter: blur(4px); }
@@ -212,6 +212,7 @@
   background: linear-gradient(90deg,#00ffcc,#0077ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-left: 490px;
 }
 .brand-values-text p {
   margin-bottom: 20px;
@@ -256,7 +257,7 @@
 }
 
 #kontakt-form {
-  margin-top: 120px;
+  margin-top: 120px; /* albo padding-top */
 }
 
 body {
@@ -267,53 +268,121 @@ body, a, button, input, textarea, select {
   cursor: none !important;
 }
 
-/* ---------- SOCIAL BUTTONS ---------- */
-.social-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-
-.social-button {
-  display: flex;
+/* Custom Instagram Button Styles */
+.custom-ig-btn {
+  background: transparent;
+  position: absolute;
+  padding: 15px 60px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 20px 24px;
-  border-radius: 16px;
-  font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 17px;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  color: var(--text);
-  box-shadow: var(--shadow);
+  cursor: pointer;
+  border: 1px solid rgb(255, 94, 0);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(255, 94, 0);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  margin-left: 750px;
+  margin-top: 90px;
+
 }
 
-.social-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(123,97,255,.4);
-  border-color: rgba(255,255,255,.2);
+.custom-ig-text {
+  margin: 10px;
 }
 
-.social-button.instagram {
-  background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #FD1D1D);
-  color: white;
-  border: none;
+.custom-ig-btn::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
 }
 
-.social-button.telegram {
-  background: linear-gradient(135deg, #0088cc, #00aced);
-  color: white;
-  border: none;
+.custom-ig-btn:hover {
+  color: #fff;
+  border: 1px solid rgb(255, 94, 0);
 }
 
-.social-icon {
-  width: 24px;
-  height: 24px;
-  filter: brightness(0) invert(1);
+.custom-ig-btn:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(255, 94, 0);
+}
+
+/* Custom Telegram Button Styles */
+.custom-tg-btn {
+  background: transparent;
+  position: absolute;
+  padding: 15px 60px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(36, 161, 222);
+  border-radius: 25px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(36, 161, 222);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+  margin-left: 420px;
+  margin-top:  30px;
+}
+
+.custom-tg-text {
+  margin: 10px;
+}
+
+button,
+.custom-tg-btn,
+.custom-ig-btn {
+  cursor: none; /* ukrywa standardowy kursor */
+}
+
+.custom-tg-btn::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.custom-tg-btn:hover {
+  color: #fff;
+  border: 1px solid rgb(36, 161, 222);
+}
+
+.custom-tg-btn:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(36, 161, 222);
+}
+
+body {
+  overflow: hidden;
 }
 
   </style>
@@ -350,22 +419,39 @@ body, a, button, input, textarea, select {
   <div class="brand-values-container">
     <div class="brand-values-text">
       <h2>Skontaktuj się z nami</h2>
-      <p>Znajdziesz nas na naszych kanałach społecznościowych. Odwiedź nasz Instagram lub dołącz do naszej grupy na Telegramie.</p>
-    </div>
-    <div class="brand-values-cards">
-      <div class="social-buttons">
-        <a href="https://instagram.com/yourprofile" class="social-button instagram magnetic" target="_blank">
-          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDguODc1QzEwLjI3OTggOC44NzUgOC44NzUgMTAuMjc5OCA4Ljg3NSAxMkM4Ljg3NSAxMy43MjAyIDEwLjI3OTggMTUuMTI1IDEyIDE1LjEyNUMxMy43MjAyIDE1LjEyNSAxNS4xMjUgMTMuNzIwMiAxNS4xMjUgMTJDMTUuMTI1IDEwLjI3OTggMTMuNzIwMiA4Ljg3NSAxMiA4Ljg3NVpNMTIgMTYuODc1QzkuNDQ3NzIgMTYuODc1IDcuMzc1IDE0LjgwMjMgNy4zNzUgMTIuMjVDNy4zNzUgOS42OTc3MiA5LjQ0NzcyIDcuNjI1IDEyIDcuNjI1QzE0LjU1MjMgNy42MjUgMTYuNjI1IDkuNjk3NzIgMTYuNjI1IDEyLjI1QzE2LjYyNSAxNC44MDIzIDE0LjU1MjMgMTYuODc1IDEyIDE2Ljg3NVpNMTcuMTI1IDcuNjI1QzE3LjEyNSA4LjI0NDI0IDE2LjYxOTIgOC43NSAxNiA4Ljc1QzE1LjM4MDggOC43NSAxNC44NzUgOC4yNDQyNCAxNC44NzUgNy42MjVDMTQuODc1IDcuMDA1NzYgMTUuMzgwOCA2LjUgMTYgNi41QzE2LjYxOTIgNi41IDE3LjEyNSA3LjAwNTc2IDE3LjEyNSA3LjYyNVpNMTggNC41QzE4IDQuOTE0MjEgMTcuNjY0MiA1LjI1IDE3LjI1IDUuMjVDMTYuODM1OCA1LjI1IDE2LjUgNC45MTQyMSAxNi41IDQuNUMxNi41IDQuMDg1NzkgMTYuODM1OCAzLjc1IDE3LjI1IDMuNzVDMTcuNjY0MiAzLjc1IDE4IDQuMDg1NzkgMTggNC41Wk0yMS43NSAxMkMyMS43NSAxNy4xMDg5IDE3LjEwODkgMjEuNzUgMTIgMjEuNzVDNi44OTExNCAyMS43NSAyLjI1IDE3LjEwODkgMi4yNSAxMkMyLjI1IDYuODkxMTQgNi44OTExNCAyLjI1IDEyIDIuMjVDMTcuMTA4OSAyLjI1IDIxLjc1IDYuODkxMTQgMjEuNzUgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="Instagram" class="social-icon">
-          Instagram
-        </a>
-        <a href="https://t.me/yourgroup" class="social-button telegram magnetic" target="_blank">
-          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyQzIgMTcuNTIgNi40OCAyMiAxMiAyMkMxNy41MiAyMiAyMiAxNy41MiAyMiAxMkMyMiA2LjQ4IDE3LjUyIDIgMTIgMlpNMTYuNjQgMTUuMjNDMTYuMjEgMTUuNDEgMTQuNzcgMTYuMDQgMTIuNzcgMTYuNTdDOS41IDE3LjU2IDkuNzEgMTYuOTYgOS41MiAxNC42N0M5LjUwNSAxNC4yMyAxMC4yNTIgMTMuOCAxMC44MyAxMy40OUM2LjU1IDExLjk4IDYuNzM1IDEwLjY5IDcuODMgMTAuMzJDMTEuMjU3IDkuMTI3IDEzLjU5IDkuOTc0IDE0LjY4NSAxMC42MkMxNy4xMzYgMTEuNzIgMTcuLjcgMTEuNjkgMTguMTIgMTEuNjhDMTguMTggMTEuNjggMTguMzEgMTEuNyAxOC4zOSAxMS43NkMxOC40NyAxMS44MiAxOC40OSAxMS45MiAxOC40OCAxMS45OUMxOC40MyAxMi4wNiAxOC4zMyAxMi4xMiAxNy45NCAxMi4zQzx3IDE2LjA3IDEyLjM3QzE2LjA3IDEyLjM3IDE1LjU3IDEyLjU1IDE0LjU5IDEyLjA5QzEzLjM3IDExLjUzIDEyLjQxIDEwLjk3IDEwLjY2IDkuOTZDOS4zNyA5LjE4IDguNDcgOC44IDguMTggOC43QzcuODQgOC41OCA3LjY1IDguNSA3LjY5IDguNDJDNy43MiA4LjM1IDcuODcgOC4zMyA4LjI2IDguM0M4LjY1IDguMjcgOS41NCA4LjI1IDEwLjUzIDguMjRDMTEuNTIgOC4yMyAxMi44MiA4LjIxIDEzLjU0IDguMkMxNC4yNiA4LjE5IDE0LjgzIDguMTggMTUuMDYgOC4xOEMxNS4yOSA4LjE4IDE1LjUyIDguMTkgMTUuNzUgOC4yQzE1Ljk4IDguMjEgMTYuMjEgOC4yMiAxNi40NCA4LjIzQzE2LjY3IDguMjQgMTYuOSA4LjI1IDE3LjEzIDguMjZDMTcuMzYgOC4yNyAxNy41OSA4LjI4IDE3LjgyIDguMjlDMTguMDUgOC4zIDE4LjI4IDguMzEgMTguNTEgOC4zMkMxOC43NCA4LjMzIDE4Ljk3IDguMzQgMTkuMiA4LjM1QzE5LjQzIDguMzYgMTkuNjYgOC4zNyAxOS44OSA4LjM4QzIwLjEyIDguMzkgMjAuMzUgOC40IDIwLjU4IDguNDFDMTguOTcgMTAuMDYgMTcuMzYgMTEuNzEgMTUuNzUgMTMuMzZDMTUuNDcgMTMuNjQgMTUuMTkgMTMuOTIgMTQuOTEgMTQuMkMxNC42MyAxNC40OCAxNC4zNSAxNC43NiAxNC4wNyAxNS4wNEMxMy43OSAxNS4zMiAxMy41MSAxNS42IDEzLjIzIDE1Ljg4QzEyLjk1IDE2LjE2IDEyLjY3IDE2LjQ0IDEyLjM5IDE2LjcyQzEyLjExIDE3IDEyLjExIDE3IDEyLjExIDE3QzEyLjExIDE3IDEyLjExIDE3IDEyLjExIDE3QzEyLjExIDE3IDEyLjExIDE3IDEyLjExIDE3QzEyLjExIDE3IDEyLjExIDE3IDEyLjExIDE3QzEyLjExIDE3IDEyLjExIDE3IDEyLjExIDE3QzEyLjExIDE3IDEyLjExIDE3IDEyLjExIDE3WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==" alt="Telegram" class="social-icon">
-          Telegram
-        </a>
-      </div>
-    </div>
-  </div>
+
+<!-- Custom Telegram Button -->
+ <a href="https://t.me/+c9bkUaFaD-45OTE0" target="_blank" class="custom-tg-link">
+<div class="custom-tg-btn">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    fill="currentColor"
+    viewBox="0 0 26 26"
+    class="custom-tg-icon"
+  >
+    <path
+      d="M2.14753 11.8099C7.3949 9.52374 10.894 8.01654 12.6447 7.28833C17.6435 5.20916 18.6822 4.84799 19.3592 4.83606C19.5081 4.83344 19.8411 4.87034 20.0567 5.04534C20.2388 5.1931 20.2889 5.39271 20.3129 5.5328C20.3369 5.6729 20.3667 5.99204 20.343 6.2414C20.0721 9.08763 18.9 15.9947 18.3037 19.1825C18.0514 20.5314 17.5546 20.9836 17.0736 21.0279C16.0283 21.1241 15.2345 20.3371 14.2221 19.6735C12.6379 18.635 11.7429 17.9885 10.2051 16.9751C8.42795 15.804 9.58001 15.1603 10.5928 14.1084C10.8579 13.8331 15.4635 9.64397 15.5526 9.26395C15.5637 9.21642 15.5741 9.03926 15.4688 8.94571C15.3636 8.85216 15.2083 8.88415 15.0962 8.9096C14.9373 8.94566 12.4064 10.6184 7.50365 13.928C6.78528 14.4212 6.13461 14.6616 5.55163 14.649C4.90893 14.6351 3.67265 14.2856 2.7536 13.9869C1.62635 13.6204 0.730432 13.4267 0.808447 12.8044C0.849081 12.4803 1.29544 12.1488 2.14753 11.8099Z"
+    ></path>
+  </svg>
+  <span class="custom-tg-text">Telegram</span>
+</div>
+</a>
+
+      <!-- Instagram Button -->
+       <a href="https://www.instagram.com/xessenceagency/" target="_blank" rel="noopener noreferrer" class="custom-ig-link">
+<div class="custom-ig-btn">
+  <svg viewBox="0 0 16 16" class="custom-ig-icon" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+  </svg>
+  <span class="custom-ig-text">Instagram</span>
+</div>
+</a>
 </section>
+
+
+
 
   <!-- Footer -->
   <footer id="kontakt">
@@ -482,7 +568,7 @@ body, a, button, input, textarea, select {
     const ring = document.querySelector('.cursor-ring');
     let mouseX = -100, mouseY = -100, ringX = -100, ringY = -100;
     const lerp = (a,b,n)=> (1-n)*a + n*b;
-    window.addEventListener('mousemove', (e)=>{ mouseX = e.clientX; mouseY = e.clientY; });
+    window.addEventListener('mousemove', (e)=>{ mouseX = e.clientX; mouseY = e.clientY; dot.style.transform = `translate(${mouseX}px, ${mouseY}px)`; });
     function renderCursor(){ ringX = lerp(ringX, mouseX, 0.15); ringY = lerp(ringY, mouseY, 0.15); ring.style.transform = `translate(${ringX}px, ${ringY}px)`; requestAnimationFrame(renderCursor); }
     renderCursor();
     // Enlarge on interactive elements
@@ -491,6 +577,8 @@ body, a, button, input, textarea, select {
     ['a','button','.magnetic','.theme-toggle'].forEach(sel=>{
       document.querySelectorAll(sel).forEach(el=>{ el.addEventListener('mouseenter', activate); el.addEventListener('mouseleave', deactivate); });
     });
+
+
 
     // Animated counters
     function animateValue(el){
@@ -511,6 +599,36 @@ body, a, button, input, textarea, select {
     }, { threshold: 0.35 });
     document.querySelectorAll('.kpis').forEach(k=> kpiObserver.observe(k));
 
+  //email sdk
+
+ src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js">
+
+
+
+window.addEventListener("DOMContentLoaded", function() {
+  emailjs.init("499bGwXTwZH6kkoaw");
+
+  const form = document.getElementById("contactForm");
+  const formMsg = document.getElementById("formMsg"); // <- ważne!
+
+  if(!form){
+    console.error("Nie znaleziono formularza #contactForm");
+    return;
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    emailjs.sendForm("service_bluaz96", "template_6nmso1d", this)
+      .then(() => {
+        if(formMsg) formMsg.textContent = "✅ Wiadomość wysłana!";
+        this.reset();
+      }, (err) => {
+        if(formMsg) formMsg.textContent = "❌ Błąd wysyłania, spróbuj ponownie.";
+        console.error(err);
+      });
+  });
+});
+    
     // GSAP cinematic entrances
     if(window.gsap){
       gsap.registerPlugin(ScrollTrigger);
