@@ -256,6 +256,21 @@ window.addEventListener('load', function () {
 		top: inherit;
 	}
 
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+		
 	header .tcg-logo .top-logo img.logo1,
 footer .tcg-logo .top-logo img.logo1 {
     width: 110px !important;
@@ -263,14 +278,21 @@ footer .tcg-logo .top-logo img.logo1 {
     max-width: 150px !important;
 }
 
-.elementor-element-7aed335 img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
-	margin-top: 150px;
-	margin-bottom: 150px;
-}
+        .elementor-element-ae4061d,
+        .elementor-element-0c3c6b2,
+        .elementor-element-acf2329,
+        .elementor-element-a3e258c {
+            width: 100% !important;
+            margin-bottom: 40px;
+        }
+
+        .elementor-element-7aed335 img {
+            width: 100% !important;
+            height: auto !important;
+            max-width: 100% !important;
+            margin-top: 100px !important;
+            margin-bottom: 100px !important;
+        }
 
 
         /* Responsywność dla tabletów */
@@ -311,6 +333,86 @@ footer .tcg-logo .top-logo img.logo1 {
                 width: 666px !important;
                 height: 375px !important;
                 max-width: 100% !important;
+            }
+        }
+
+		        /* Poprawki dla formularza kontaktowego */
+        .wpcf7-form p {
+            width: 100% !important;
+        }
+        
+        .wpcf7-form input,
+        .wpcf7-form textarea {
+            width: 100% !important;
+        }
+        
+        /* Poprawki dla sekcji opinii */
+        .infolio-testim-init .swiper-slide {
+            padding: 15px;
+        }
+        
+        /* Poprawki dla stopki */
+        .site-footer .elementor-widget-container {
+            text-align: center;
+        }
+        
+        /* Media queries dla różnych rozmiarów ekranu */
+        @media (max-width: 1024px) {
+            .elementor-element-7aed335 img {
+                margin-top: 80px !important;
+                margin-bottom: 80px !important;
+            }
+            
+            .elementor-heading-title,
+            .infolio-heading {
+                font-size: calc(1.3rem + 1vw) !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .elementor-element-7aed335 img {
+                margin-top: 60px !important;
+                margin-bottom: 60px !important;
+            }
+            
+            .main-menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .main-menu li {
+                margin: 10px 0;
+            }
+            
+            .elementor-heading-title,
+            .infolio-heading {
+                font-size: calc(1.2rem + 1vw) !important;
+            }
+            
+            .elementor-element-ae4061d,
+            .elementor-element-0c3c6b2,
+            .elementor-element-acf2329,
+            .elementor-element-a3e258c {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .elementor-element-7aed335 img {
+                margin-top: 40px !important;
+                margin-bottom: 40px !important;
+            }
+            
+            .elementor-heading-title,
+            .infolio-heading {
+                font-size: calc(1rem + 1vw) !important;
+            }
+            
+            .elementor-element-ae4061d,
+            .elementor-element-0c3c6b2,
+            .elementor-element-acf2329,
+            .elementor-element-a3e258c {
+                margin-bottom: 20px;
             }
         }
 
@@ -501,7 +603,13 @@ footer .tcg-logo .top-logo img.logo1 {
 				<div class="elementor-element elementor-element-7aed335 elementor-widget elementor-widget-image" data-id="7aed335" data-element_type="widget" data-settings="{&quot;tc_dark_mode_responsive_hide_in_dark&quot;:&quot;no&quot;,&quot;tc_dark_mode_responsive_hide_in_light&quot;:&quot;no&quot;}" data-widget_type="image.default">
 				<div class="elementor-widget-container">
 			<style>/*! elementor - v3.23.0 - 05-08-2024 */
-.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>										<img fetchpriority="high" decoding="async" width="1920" height="1080" src="tlo2.png" class="attachment-full size-full wp-image-1730" alt="Specjalista od Marketingu w Essence">													</div>
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>								
+<picture>
+    <!-- Dla urządzeń mobilnych (max-width: 768px) użyj mobile-image.png -->
+    <source media="(max-width: 768px)" srcset="tlo2.png">
+    <!-- Dla urządzeń desktopowych użyj tlo2.png -->
+    <img fetchpriority="high" decoding="async" width="1920" height="1080" src="tlo2.png" class="attachment-full size-full wp-image-1730" alt="Specjalista od Marketingu w Essence">
+</picture>												</div>
 			<!-- Biała strzałka przewijająca -->
 <div class="scroll-down-arrow">
     <a href="#oferta" class="scroll-down-link">
